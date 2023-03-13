@@ -9,20 +9,20 @@ Just write TODO:s over your Python project. This script will print them out for 
 
 ## How to use
 1. Move the script to your `/usr/local/bin/`
-```bash
+```fish
 sudo mv todos /usr/local/bin
 ```  
 
 2. Give executable permissions.  
 
-```bash
+```fish
 sudo chmod +x /usr/local/bin/todos
 ```  
 
 
 3. Now you can run todos anywhere.
 
-```bash
+```fish
 cd my/project/
 todos
 ```  
@@ -34,7 +34,7 @@ my/project/module/core.py:1 # Add comments
 ```
 
 4. You can also give the absolute path to todos and it will work.
-```bash
+```fish
 cd Desktop
 todos /path/to/my/project
 ```  
