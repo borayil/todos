@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+import sys
+import os
+
+# Print a red hello
+print('\033[1;31m(TODOs)\033[0m')
+
+ignore_directories = ['.git', 'env']
+
+# Check if the user provided a root directory argument
+if len(sys.argv) == 2:
+    root_directory = sys.argv[1]
+else:
+    # Set the root directory to the current directory
+    root_directory = '.'
+    sys.exit(1)
+
+# Check if the provided root directory exists
+if not os.path.isdir(root_directory):
+    print(f'{root_directory} is not a directory.')
+    sys.exit(1)
+
+# Loop through all the files and directories in the project root directory
+for root, dirs, files in os.walk(root_directory):
+    # Ignore directories
+    dirs[:] = [d for d in dirs if d not in ignore_directories]
+
+    # Loop through all the Python files in the current directory
+    for file in files:
+        if file.endswith('.py'):
+            python_file = os.path.join(root, file)
+            with open(python_file, 'r') as f:
+                lines = f.readlines()
+                for i, line in enumerate(lines):
+                    if 'TODO:' in line:
+                        # Remove the TODO: from the line
+                        line = line.replace('TODO:', '')
+                        # Remove trailing whitespace
+                        line = line.strip()
+                        # Remove leading whitespace
+                        line = line.lstrip()
+                        print(
+                            f'\033[1;34m{python_file}:{i+1}\033[0m \t {line.strip()}')
