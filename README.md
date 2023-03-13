@@ -9,11 +9,14 @@ Just write TODO:s over your Python project. This script will print them out for 
 
 ## How to use
 1. Move the script to your `/usr/local/bin/`
+```bash
+sudo mv todos /usr/local/bin
+```  
 
 2. Give executable permissions.  
 
 ```bash
-chmod +x /usr/local/bin/todos
+sudo chmod +x /usr/local/bin/todos
 ```  
 
 
