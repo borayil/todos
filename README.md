@@ -2,9 +2,7 @@
 Python script to find and print TODOs in given route (current dir by default)  
 
 ## Why
-Just write TODO:s over your Python project. This script will print them out for you in case you want a reminder for all of them. Nice way to keep track of TODOs for solo projects or small teams. Prioritys could be added so TODOs can be ranked.  
-
-`# TODO:Priority Level: Fix this bug here`
+Just write TODO:s over your Python project. This script will print them out for you in case you want a reminder for all of them. Nice way to keep track of TODOs for solo projects or small teams. 
 
 ## How to use
 1. Move the script to your `/usr/local/bin/`
@@ -34,4 +32,8 @@ my/project/module/core.py:1 # Add comments
 cd Desktop
 todos /path/to/my/project
 ```  
+   
+## TODO:
+Prioritys could be added so TODOs can be ranked before they are printed.  
 
+`# TODO:Priority Level: Fix this bug here`
