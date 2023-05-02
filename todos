@@ -5,7 +5,11 @@ import os
 # Print a red hello
 print('\033[1;31m(TODOs)\033[0m')
 
-ignore_directories = ['.git', 'env']
+ignore_directories = ['.git', 'env', 'package.json',
+                      'package-lock.json',
+                      'node_modules', 'yarn.lock', '.gitignore',
+                      '__pycache__', '.env', '.pytest_cache',
+                      ]
 
 # Check if the user provided a root directory argument
 if len(sys.argv) == 2:
@@ -13,7 +17,6 @@ if len(sys.argv) == 2:
 else:
     # Set the root directory to the current directory
     root_directory = '.'
-    sys.exit(1)
 
 # Check if the provided root directory exists
 if not os.path.isdir(root_directory):
@@ -27,7 +30,7 @@ for root, dirs, files in os.walk(root_directory):
 
     # Loop through all the Python files in the current directory
     for file in files:
-        if file.endswith('.py'):
+        if file.endswith('.js') or file.endswith('.py') or file.endswith('.tsx') or file.endswith('.jsx') or file.endswith('.ts'):
             python_file = os.path.join(root, file)
             with open(python_file, 'r') as f:
                 lines = f.readlines()
@@ -40,4 +43,4 @@ for root, dirs, files in os.walk(root_directory):
                         # Remove leading whitespace
                         line = line.lstrip()
                         print(
-                            f'\033[1;34m{python_file}:{i+1}\033[0m \t {line.strip()}')
+                            f'\033[1m\033[92m{python_file}:{i+1}\033[0m \t {line.strip()}')
