@@ -5,7 +5,7 @@ Python script to find and print TODOs in given route (current dir by default)
 Make sure to not run todos in a large parent directory, like your home folder. There are probably lots of `.py` files you are not aware of, so the script will find all of them and print lots of TODOs. Press Ctrl+C if this happens.
 
 ## Why
-Just write TODO:s over your Python project. This script will print them out for you in case you want a reminder for all of them. Nice way to keep track of TODOs for solo projects or small teams. 
+Just write TODO:s over your project code. This script will print them out for you in case you want a reminder for all of them. Nice way to keep track of TODOs for solo projects or small teams. The script ignores specific files and dirs, you can edit that at the top.
 
 ## How to use
 1. Move the script to your `/usr/local/bin/`
